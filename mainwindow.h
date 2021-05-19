@@ -47,6 +47,7 @@ private slots:
     void penColor();
     void circleColor();
     void lineColor();
+    void drawCircle();
     void lineWidht();
     void circleWidht();
     void penWidth();

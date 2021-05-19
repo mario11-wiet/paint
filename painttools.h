@@ -41,6 +41,7 @@ public:
     bool openImage(const QString &file);
     bool save(const QString &file,const char *format);
     void drawLine(const QPoint &point);
+    bool drawCircle;
 
 public slots:
     void clear();

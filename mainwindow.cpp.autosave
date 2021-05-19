@@ -47,6 +47,10 @@ void MainWindow::drawCircle()
 {
     paintTools->drawCircle=true;
 }
+void MainWindow::drawLine()
+{
+    paintTools->lineDraw=true;
+}
 void MainWindow::lineWidht()
 {
     int width = QInputDialog::getInt(this,"Paint","Line widht:",paintTools->penWidht(),1,maxWidht,1,&newWidht);
@@ -132,6 +136,8 @@ void  MainWindow::ceateAction()
     connect(lineColorAction, SIGNAL(triggered()), this, SLOT(lineColor()));
     lineWidthAction = new QAction("Line Width",this);
     connect(lineWidthAction, SIGNAL(triggered()), this, SLOT(lineWidht()));
+    lineAction = new QAction("Draw a line",this);
+    connect(lineAction, SIGNAL(triggered()), this, SLOT(lineColor()));
 
 }
 
