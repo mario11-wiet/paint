@@ -11,7 +11,6 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow();
-    //~MainWindow();
     int maxWidht = 100;
     bool newWidht;
 
@@ -54,7 +53,6 @@ private slots:
     void penWidth();
     void open();
     void save();
-    void about();
     void importantMessage();
 
 protected:

@@ -174,7 +174,6 @@ void  MainWindow::ceateAction()
 }
 
 
-void  MainWindow::about(){}
 void  MainWindow::createMenu()
 {
     saveMenu = new QMenu("Save As", this);
