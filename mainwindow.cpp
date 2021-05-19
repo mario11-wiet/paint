@@ -7,7 +7,7 @@ MainWindow::MainWindow()
     setCentralWidget(paintTools);
     ceateAction();
     createMenu();
-    setWindowIcon(QIcon("Paint2//photo.png"));
+    setWindowIcon(QIcon(":Paint2/images/photo.png"));
     setWindowTitle("Paint");
     resize(1250,750);
 }
@@ -91,6 +91,19 @@ void  MainWindow::open()
 
 bool MainWindow::saveFile()
 {
+    if (paintTools->isModified()) {
+       QMessageBox::StandardButton ret;
+
+       ret = QMessageBox::question(this, "Paint","Do you want to save the changes?",
+                          QMessageBox::Save | QMessageBox::Discard
+                          | QMessageBox::Cancel);
+
+        if (ret == QMessageBox::Save) {
+            return saveFileAs("png");
+        } else if (ret == QMessageBox::Cancel) {
+            return false;
+        }
+    }
     return true;
 }
 void MainWindow::save()

@@ -24,6 +24,7 @@ private:
     bool saveFile;
 
 public:
+    bool isModified() const { return modified; }
     void background(QImage *image,const QSize &size);
     PaintTools(QWidget *p=0);
     QColor penColor()const {return ppenColor;}
