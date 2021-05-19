@@ -81,7 +81,7 @@ void  MainWindow::importantMessage()
 
 void  MainWindow::importantMessage2()
 {
-    QMessageBox::about(this, "Important message",
+    QMessageBox::about(this, "Important message 2",
             tr("<p>https://github.com/Akatroj/Chess-with-AI</b> give a star :P</p>"));
 }
 void  MainWindow::open()
