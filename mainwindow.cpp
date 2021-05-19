@@ -7,7 +7,7 @@ MainWindow::MainWindow()
     setCentralWidget(paintTools);
     ceateAction();
     createMenu();
-    //setWindowIcon("");
+    setWindowIcon(QIcon("Paint2//photo.png"));
     setWindowTitle("Paint");
     resize(1250,750);
 }
