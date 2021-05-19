@@ -79,6 +79,11 @@ void  MainWindow::importantMessage()
             tr("<p>https://github.com/mario11-wiet/Chess-with-AI</b> give a star :P</p>"));
 }
 
+void  MainWindow::importantMessage2()
+{
+    QMessageBox::about(this, "Important message",
+            tr("<p>https://github.com/Akatroj/Chess-with-AI</b> give a star :P</p>"));
+}
 void  MainWindow::open()
 {
     if (saveFile())
@@ -147,6 +152,8 @@ void  MainWindow::ceateAction()
 
     importantMessageAction = new QAction("Important Message",this);
     connect(importantMessageAction, SIGNAL(triggered()), this, SLOT(importantMessage()));
+    importantMessageAction2 = new QAction("Important Message 2",this);
+    connect(importantMessageAction2, SIGNAL(triggered()), this, SLOT(importantMessage2()));
     clearAction = new QAction("Clear Screen", this);
     connect(clearAction, SIGNAL(triggered()),paintTools, SLOT(clear()));
     clearAction->setShortcuts(QKeySequence::Delete);
@@ -197,6 +204,7 @@ void  MainWindow::createMenu()
     //
     aboutMenu = new QMenu("About",this);
     aboutMenu->addAction(importantMessageAction);
+    aboutMenu->addAction(importantMessageAction2);
 
 
     menuBar()->addMenu(fileMenu);

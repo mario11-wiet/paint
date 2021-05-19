@@ -26,6 +26,7 @@ private:
     QAction *exitAction;
     QAction *openAction;
     QAction *importantMessageAction;
+    QAction *importantMessageAction2;
     QAction *aboutAction;
     QAction *clearAction;
     QAction *penColorAction;
@@ -54,6 +55,7 @@ private slots:
     void open();
     void save();
     void importantMessage();
+    void importantMessage2();
 
 protected:
     void closeEvent(QCloseEvent *event) override;
