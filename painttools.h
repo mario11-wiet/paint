@@ -42,6 +42,7 @@ public:
     bool save(const QString &file,const char *format);
     void drawLine(const QPoint &point);
     bool drawCircle;
+    bool lineDraw;
 
 public slots:
     void clear();

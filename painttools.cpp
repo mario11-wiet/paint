@@ -21,6 +21,8 @@ void PaintTools::drawLine(const QPoint &point)
                                      .adjusted(-rad, -rad, +rad, +rad));
     ppoint =point;
     modified = true;
+    drawCircle = false;
+    lineDraw = false;
 
 }
 //

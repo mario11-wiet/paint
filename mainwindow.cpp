@@ -45,7 +45,25 @@ void MainWindow::circleWidht()
 }
 void MainWindow::drawCircle()
 {
-    paintTools->drawCircle=true;
+    if(paintTools->drawCircle)
+    {
+        paintTools->drawCircle=false;
+    }
+    else
+    {
+        paintTools->drawCircle=true;
+    }
+}
+void MainWindow::drawLine()
+{
+    if(paintTools->lineDraw)
+    {
+        paintTools->lineDraw=false;
+    }
+    else
+    {
+        paintTools->lineDraw=true;
+    }
 }
 void MainWindow::lineWidht()
 {
@@ -132,6 +150,8 @@ void  MainWindow::ceateAction()
     connect(lineColorAction, SIGNAL(triggered()), this, SLOT(lineColor()));
     lineWidthAction = new QAction("Line Width",this);
     connect(lineWidthAction, SIGNAL(triggered()), this, SLOT(lineWidht()));
+    lineAction = new QAction("Draw a line",this);
+    connect(lineAction, SIGNAL(triggered()), this, SLOT(drawLine()));
 
 }
 
@@ -153,6 +173,7 @@ void  MainWindow::createMenu()
     circleMenu->addAction(circleWidthAction);
     //
     lineMenu = new QMenu("Line",this);
+    lineMenu->addAction(lineAction);
     lineMenu->addAction(lineColorAction);
     lineMenu->addAction(lineWidthAction);
     //
