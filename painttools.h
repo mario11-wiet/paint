@@ -17,6 +17,8 @@ private:
     QPoint ppoint;
     QImage pimage;
     int ppenWidht;
+    int pcircleWidht;
+    int plineWidht;
     bool modified;
     bool paiting;
     bool saveFile;
@@ -28,6 +30,10 @@ public:
     QColor circleColor() const {return pcircleColor;}
     QColor lineColor() const {return plineColor;}
     int penWidht() const{return ppenWidht;}
+    int circleWidht() const{ return pcircleWidht;}
+    int lineWidht() const {return plineWidht;}
+    void setCircleWidht(const int widht) {pcircleWidht =widht;}
+    void setLineWight(const int widht) {plineWidht = widht;}
     void setPenColor(const QColor &color){ppenColor = color;};
     void setCircleColor(const QColor &color){pcircleColor=color;};
     void setLineColor(const QColor &color){plineColor=color;};

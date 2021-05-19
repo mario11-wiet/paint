@@ -35,6 +35,22 @@ void MainWindow::penWidth()
         paintTools->setWidht(width);
     }
 }
+void MainWindow::circleWidht()
+{
+    int width = QInputDialog::getInt(this,"Circle","Circle widht:",paintTools->circleWidht(),1,maxWidht/4,1,&newWidht);
+    if(newWidht)
+    {
+        paintTools->setCircleWidht(width);
+    }
+}
+void MainWindow::lineWidht()
+{
+    int width = QInputDialog::getInt(this,"Paint","Pen widht:",paintTools->penWidht(),1,maxWidht,1,&newWidht);
+    if(newWidht)
+    {
+        paintTools->setLineWight(width);
+    }
+}
 void  MainWindow::importantMessage()
 {
     QMessageBox::about(this, "Important message",
@@ -102,6 +118,7 @@ void  MainWindow::ceateAction()
     penWidthAction = new QAction("Pen Width",this);
     connect(penWidthAction, SIGNAL(triggered()), this, SLOT(penWidth()));
     //dopisac kolo i linie
+
 }
 
 

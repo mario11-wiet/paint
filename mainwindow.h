@@ -32,8 +32,10 @@ private:
     QAction *penColorAction;
     QAction *penWidthAction;
     QAction *circleColorAction;
+    QAction *circleWidthAction;
     QAction *cicrleAction;
     QAction *lineColorAction;
+    QAction *lineWidthAction;
     QAction *lineAction;
 
     void createMenu();
@@ -45,6 +47,8 @@ private slots:
     void penColor();
     void circleColor();
     void lineColor();
+    void lineWidht();
+    void circleWidht();
     void penWidth();
     void open();
     void save();
