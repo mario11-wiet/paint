@@ -136,6 +136,7 @@ void  MainWindow::ceateAction()
 {
     openAction = new QAction("Open",this);
     connect(openAction, SIGNAL(triggered()), this, SLOT(open()));
+    openAction->setShortcuts(QKeySequence::Open);
     foreach (QByteArray format, QImageWriter::supportedImageFormats()) {
         QString text = tr("%1...").arg(QString(format).toUpper());
         QAction *action = new QAction(text, this);
@@ -143,10 +144,12 @@ void  MainWindow::ceateAction()
         connect(action, SIGNAL(triggered()), this, SLOT(save()));
         listAction.append(action);
     }
+
     importantMessageAction = new QAction("Important Message",this);
     connect(importantMessageAction, SIGNAL(triggered()), this, SLOT(importantMessage()));
     clearAction = new QAction("Clear Screen", this);
     connect(clearAction, SIGNAL(triggered()),paintTools, SLOT(clear()));
+    clearAction->setShortcuts(QKeySequence::Delete);
     //dodac skróty klawiszowe
     penColorAction = new QAction("Pen Color",this);
     connect(penColorAction, SIGNAL(triggered()), this, SLOT(penColor()));
@@ -159,12 +162,14 @@ void  MainWindow::ceateAction()
     connect(circleWidthAction, SIGNAL(triggered()), this, SLOT(circleWidht()));
     cicrleAction = new QAction("Draw a circle",this);
     connect(cicrleAction,SIGNAL(triggered()),this,SLOT());
+    cicrleAction ->setShortcut(QKeySequence::Copy);
     lineColorAction = new QAction("Line Color",this);
     connect(lineColorAction, SIGNAL(triggered()), this, SLOT(lineColor()));
     lineWidthAction = new QAction("Line Width",this);
     connect(lineWidthAction, SIGNAL(triggered()), this, SLOT(lineWidht()));
     lineAction = new QAction("Draw a line",this);
     connect(lineAction, SIGNAL(triggered()), this, SLOT(drawLine()));
+    lineAction->setShortcuts(QKeySequence::MoveToNextLine);
 
 }
 
@@ -176,6 +181,7 @@ void  MainWindow::createMenu()
     foreach (QAction *action, listAction)
     {
         saveMenu->addAction(action);
+        action->setShortcuts(QKeySequence::SaveAs);
     }
     fileMenu = new QMenu("File", this);
     fileMenu->addMenu(saveMenu);
